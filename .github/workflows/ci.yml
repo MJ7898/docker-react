@@ -1,0 +1,16 @@
+name: Docker-React CI
+on:
+  push:
+  workflow_dispatch:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: | 
+        docker build -t MJ7898/docker-react -f Dockerfile.dev .
+        docker run MJ7898/docker-react npm run test -- --coverage
