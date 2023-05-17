@@ -12,5 +12,5 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: | 
-        docker build -t MJ7898/docker-react -f Dockerfile.dev .
-        docker run MJ7898/docker-react npm run test -- --coverage
+        docker build -t mijenne/docker-react -f Dockerfile.dev .
+        docker run mijenne/docker-react npm run test -- --coverage
