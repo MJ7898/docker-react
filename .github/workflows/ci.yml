@@ -13,4 +13,4 @@ jobs:
     - name: Build the Docker image
       run: | 
         docker build -t mijenne/docker-react -f Dockerfile.dev .
-        docker run mijenne/docker-react npm run test -- --coverage
+        docker run -e CI=true mijenne/docker-react npm run test -- --coverage
